@@ -1,0 +1,42 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'quiz/css/styles.css' %}">
+    
+    
+    <script src="{% static 'quiz/codes.js' %}"></script>
+    <title>QuizApp</title>
+</head>
+<body>
+    
+    <h1>General knowledge Quiz</h1>
+    
+    <form method="post">
+       
+        {% csrf_token %}
+
+
+        {% for quest in question %}
+        <div class="names"> {{quest.id}}---{{quest.question}}?<br/>
+
+            <br/> <input type="radio" name={{quest.id}} id="{{quest.correct_answer}}" value="{{quest.answer_a}}" onclick="myf(value,id,name)"/>{{quest.answer_a}} <br/>
+            <input type="radio" name={{quest.id}} id="{{quest.correct_answer}}" value="{{quest.answer_b}}" onclick="myf(value,id,name)"/> {{quest.answer_b}} <br/>
+            <input type="radio" name={{quest.id}} id="{{quest.correct_answer}}" value="{{quest.answer_c}}" onclick="myf(value,id,name)"/> {{quest.answer_c}}<br/>
+            <input type="radio" name={{quest.id}} id="{{quest.correct_answer}}" value="{{quest.answer_d}}" onclick="myf(value,id,name)" /> {{quest.answer_d}} <br/>
+            
+            
+        </div><br/>
+    {% endfor %}
+
+</form>
+
+<button value="{{total_questions}}" onclick="finale1(value)">Finish</button>
+<label >Score: <label id="myscore"></label></label>
+<a id="return" href="{% url 'landing' %}"><button>Return</button></a>
+
+
+</body>
+</html>

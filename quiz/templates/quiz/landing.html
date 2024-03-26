@@ -1,0 +1,49 @@
+{% extends 'quiz/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    {% block pagecontent %}
+    <div class="containers">
+        <div>
+            <h3>General Knowledge</h3>
+            <p>This quiz tests your general knowledge abilities 
+                It is important to know some fundamental concepts about General Knowledge
+            </p>
+           <a href="{% url 'index' %}"><button>Take Quiz</button></a>  </div>
+        <div>
+            <h3>Chemistry Quiz</h3>
+            <p>This quiz tests your knowledge on fundamental concepts around chemistry 
+                It is important to know some fundamental concepts about chemistry to 
+                improve your career prospects
+            </p>
+            <a href="{% url 'index' %}"><button>Take Quiz</button></a> 
+            
+
+        </div>
+    </div>
+
+    <div class="containers">
+        <div>
+            <h3>General Knowledge</h3>
+            <p>This quiz tests your general knowledge abilities 
+                It is important to know some fundamental concepts about General Knowledge
+            </p>
+           <a href="{% url 'index' %}"><button>Take Quiz</button></a>  </div>
+        <div>
+            <h3>Chemistry Quiz</h3>
+            <p>This quiz tests your knowledge on fundamental concepts around chemistry 
+                It is important to know some fundamental concepts about chemistry to 
+                improve your career prospects
+            </p>
+            <a href="{% url 'index' %}"><button>Take Quiz</button></a> 
+
+        </div>
+    </div>
+         
+    {% endblock %}
+</body>
+</html>

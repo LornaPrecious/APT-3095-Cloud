@@ -1,0 +1,37 @@
+.form-bradley{
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-heading {
+  margin-top: 20px;
+}
+
+label {
+  display: block; 
+  margin-bottom: 3px;
+  color: #000000;
+  
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  background-color: #75b2c66b;
+  border: 1px solid ;
+  border-radius: 4px;
+}
+#classify{
+  margin-top: -1em;
+}
+.new{
+  margin-bottom: 5em;
+}
+
+

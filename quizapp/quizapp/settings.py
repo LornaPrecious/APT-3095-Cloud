@@ -39,9 +39,9 @@ django.utils.encoding.force_text = force_str
 SECRET_KEY = 'django-insecure-x94%xoc!f&&*$u3t%f&1)yninyoah3jeas_r--0ia7@4-ek)$m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition

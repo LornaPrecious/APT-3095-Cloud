@@ -7,7 +7,6 @@ django-widget-tweaks==1.5.0
 dm-tree==0.1.8
 docopt==0.6.2
 idna==3.6
-imutils==0.5.4
 iniconfig==2.0.0
 namex==0.0.7
 packaging==23.2
@@ -15,9 +14,6 @@ pefile==2023.2.7
 pillow==10.2.0
 pluggy==1.4.0
 Pygments==2.17.2
-PyQt5==5.15.10
-PyQt5-Qt5==5.15.2
-PyQt5-sip==12.13.0
 pytest==8.0.2
 pywin32-ctypes==0.2.2
 setuptools==69.0.3

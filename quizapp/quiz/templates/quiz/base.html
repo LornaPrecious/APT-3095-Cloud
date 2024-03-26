@@ -1,0 +1,96 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="{% static 'quiz/css/land.css' %}">
+    <link rel="stylesheet" href="{% static 'quiz/css/formbradley.css' %}">
+    <script src="{% static 'quiz/codes.js' %}"></script>
+    <title>Brainz</title>
+
+
+<script type = "text/javascript">
+  
+    var user = '{{request.user}}'
+  
+    function getToken(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+  
+    var csrftoken = getToken('csrftoken');
+
+</script>
+
+</head>
+
+<body>
+    
+  {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>Message: </strong> {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span> </button>
+
+    </div>
+  {% endfor %}
+
+
+  {% if not user.is_authenticated %}
+
+    <div class="navb">
+        
+        <div>
+            <nav>  
+                <div id="brain"><h1>Brainz</h1></div>
+                
+                <li><a href="{% url 'landing' %}">Home</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>               
+                <li><a href="{% url 'login' %}">Login</a></li>
+
+            </nav>
+        </div>
+    </div>
+
+    {% else %}
+
+    <div class="navb">
+       
+        <div>
+            <nav>  
+                <div id="brain"><h1>Brainz</h1></div>
+                
+                <li><a href="{% url 'landing' %}">Home</a></li>
+                <li><a href="{% url 'signout' %}">Logout</a></li>
+
+            </nav>
+        </div>
+    </div>
+
+    {% endif %}
+    {% block pagecontent %}  {% endblock %}
+
+
+   
+        
+       <footer class="mb">
+        All rights reserved &copy; 2024 
+       </footer>
+    
+
+</body>
+</html>
+    
